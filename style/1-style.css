@@ -1,0 +1,48 @@
+/* Container holding the image and the text */
+body {
+    background-color: bisque;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.cell {
+    position: relative;
+    margin: 1rem;
+  }
+
+.cell img{
+    height: 70vh;
+  }
+.cell p{
+    height: 20vh;
+    margin: 20px;
+  }
+
+  h4{
+    margin-left: 5px;
+  }
+  
+  /* Bottom right text */
+.text-block {
+    top: 45vh;
+    left: 60px;
+    bottom: -10px;
+    right: 50px;
+    position: absolute;
+    background-color: bisque;
+    opacity: 0.5;
+    color: black;
+    padding-left: 20x;
+    padding-right: 20px;
+    margin: 5px;
+  }
+
+  input {
+    margin: 5px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: bisque;
+  }
