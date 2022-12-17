@@ -41,7 +41,8 @@ buttonElement.onclick = function (e) {
     var resultElement = document.getElementById('result');
     if (products.length < 5) {
         if (resultElement != null) {
-            resultElement.innerText = "";
+            resultElement.setAttribute("class", "text-error");
+            resultElement.innerHTML = "";
             resultElement.innerHTML += "Kérlek adj meg legalább 5 terméket a számításhoz</br>";
         }
     }
@@ -51,10 +52,13 @@ buttonElement.onclick = function (e) {
         var mean = avg(pricevalues);
         var stdDeviaton = deviaton(pricevalues);
         if (resultElement != null) {
-            resultElement.innerText = "";
-            resultElement.innerHTML += "A legyolcsóbb termék: " + cheapestProduct.name + " ára: " + cheapestProduct.price + "</br>";
-            resultElement.innerHTML += "Az árak átlaga: " + mean + "</br>";
-            resultElement.innerHTML += "Az árak szórása: " + stdDeviaton;
+            resultElement.removeAttribute("class");
+            resultElement.innerHTML = "";
+            resultElement.innerHTML += "<ul>";
+            resultElement.innerHTML += "<li>A legyolcsóbb termék: " + cheapestProduct.name + " ára: " + cheapestProduct.price + "</li>";
+            resultElement.innerHTML += "<li>Az árak átlaga: " + mean + "</li>";
+            resultElement.innerHTML += "<li>Az árak szórása: " + stdDeviaton + "</li>";
+            resultElement.innerHTML += "</ul>";
         }
     }
     products = [];

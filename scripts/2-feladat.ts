@@ -30,7 +30,13 @@ function parabolaArea(a: number, b: number, angle: number): number {
     const areaValue = parabolaArea(siteaVaule,sitebVaule,angleVaule);
     const areaElement = document.getElementById('area') as HTMLInputElement | null
     if(areaElement != null){
-        areaElement.textContent = "A paralelogramma területe: " +areaValue;
+        if(areaValue > 0){
+          areaElement.removeAttribute("class")
+          areaElement.textContent = "A paralelogramma területe: " +areaValue;
+        } else {
+          areaElement.setAttribute("class","text-error")
+          areaElement.textContent = "A paralelogramma területének számításához töltsd ki mind a három mezőt, egyik érték se legyen nulla, vagy negatív!";
+        }
     }
   });
 

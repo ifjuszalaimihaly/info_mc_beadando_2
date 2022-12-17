@@ -31,8 +31,9 @@ buttonTag.onclick = function(e: Event){
     const resultTag = document.getElementById('result') as HTMLSpanElement| null
     if(names.length < 5){
       if(resultTag != null){
-        resultTag.innerText = "";
-        resultTag.innerHTML += "Kérlek adj meg legalább 5 terméket a számításhoz</br>"
+        resultTag.setAttribute("class","text-error");
+        resultTag.innerHTML = "";
+        resultTag.innerHTML += "Kérlek adj meg legalább 5 terméket a számításhoz!</br>"
       }
     } else {
         let randomIndexes: number[] = [];
@@ -43,10 +44,13 @@ buttonTag.onclick = function(e: Event){
             } 
         }
         if(resultTag != null){
-            resultTag.innerText = "";
+            resultTag.removeAttribute("class");
+            resultTag.innerHTML = "";
+            resultTag.innerHTML += "<ul>"
             randomIndexes.forEach(index => {
-                resultTag.innerHTML += names[index] +  "</br>"
+                resultTag.innerHTML += "<li>" + names[index] +  "</li>"
             });
+            resultTag.innerHTML += "</ul>"
           }
     }
     names = [];

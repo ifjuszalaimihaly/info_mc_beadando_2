@@ -4,7 +4,7 @@ body {
     color: brown;
 }
 
-ul {
+.menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -12,18 +12,18 @@ ul {
   background-color: bisque;
 }
 
-li {
+.menu-item {
   float: left;
 }
 
-li a {
+.menu-item a {
   display: block;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   color: brown;
 }
-li a:hover {
+.menu-item a:hover {
   background-color: #f6dAc5;
 }
 
@@ -62,6 +62,11 @@ li a:hover {
     padding-left: 20x;
     padding-right: 20px;
     margin: 5px;
+  }
+
+  .text-error{
+    color: red;
+    font-size: 18px;
   }
 
   input {

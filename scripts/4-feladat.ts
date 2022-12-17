@@ -18,7 +18,7 @@ for (let i = 0; i < 7; i++) {
     formRow.innerHTML = 
     `${rowIndex}. termék
     <input type="text" id="name-${i}" placeholder="név">
-    <input type="number" id="price-${i}" placeholder="ár">
+    <input type="number" id="price-${i}" min="0" placeholder="ár">
     `   
     formElement?.appendChild(formRow);
   }
@@ -50,8 +50,9 @@ for (let i = 0; i < 7; i++) {
     const resultElement = document.getElementById('result') as HTMLSpanElement | null
     if(products.length < 5){
       if(resultElement != null){
-        resultElement.innerText = "";
-        resultElement.innerHTML += "Kérlek adj meg legalább 5 terméket a számításhoz</br>"
+        resultElement.setAttribute("class","text-error");
+        resultElement.innerHTML = "";
+        resultElement.innerHTML += "Kérlek adj meg legalább 5 terméket a számításhoz!</br>"
       }
     } else {
     let pricevalues = getPriceValues(products);
@@ -59,10 +60,13 @@ for (let i = 0; i < 7; i++) {
     let mean = avg(pricevalues);
     let stdDeviaton = deviaton(pricevalues);
     if(resultElement != null){
-        resultElement.innerText = "";
-        resultElement.innerHTML += "A legyolcsóbb termék: " + cheapestProduct.name + " ára: " + cheapestProduct.price+ "</br>"
-        resultElement.innerHTML += "Az árak átlaga: " + mean + "</br>"
-        resultElement.innerHTML += "Az árak szórása: " + stdDeviaton
+        resultElement.removeAttribute("class");
+        resultElement.innerHTML = "";
+        resultElement.innerHTML += "<ul>"
+        resultElement.innerHTML += "<li>A legyolcsóbb termék: " + cheapestProduct.name + " ára: " + cheapestProduct.price+ "</li>"
+        resultElement.innerHTML += "<li>Az árak átlaga: " + mean + "</li>"
+        resultElement.innerHTML += "<li>Az árak szórása: " + stdDeviaton + "</li>"
+        resultElement.innerHTML += "</ul>"
     }
   }
     products = [];

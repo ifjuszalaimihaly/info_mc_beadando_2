@@ -25,6 +25,13 @@ button === null || button === void 0 ? void 0 : button.addEventListener('click',
     var areaValue = parabolaArea(siteaVaule, sitebVaule, angleVaule);
     var areaElement = document.getElementById('area');
     if (areaElement != null) {
-        areaElement.textContent = "A paralelogramma területe: " + areaValue;
+        if (areaValue > 0) {
+            areaElement.removeAttribute("class");
+            areaElement.textContent = "A paralelogramma területe: " + areaValue;
+        }
+        else {
+            areaElement.setAttribute("class", "text-error");
+            areaElement.textContent = "A paralelogramma területének számításához töltsd ki mind a három mezőt, egyik érték se legyen nulla, vagy negatív!";
+        }
     }
 });
