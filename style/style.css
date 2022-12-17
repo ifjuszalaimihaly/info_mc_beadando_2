@@ -1,6 +1,30 @@
 /* Container holding the image and the text */
 body {
     background-color: bisque;
+    color: brown;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: bisque;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: brown;
+}
+li a:hover {
+  background-color: #f6dAc5;
 }
 
 .container {
@@ -34,7 +58,7 @@ body {
     position: absolute;
     background-color: bisque;
     opacity: 0.5;
-    color: black;
+    color: brown;
     padding-left: 20x;
     padding-right: 20px;
     margin: 5px;
@@ -45,4 +69,5 @@ body {
     height: 20px;
     border-radius: 2px;
     background-color: bisque;
+    color: brown;
   }
